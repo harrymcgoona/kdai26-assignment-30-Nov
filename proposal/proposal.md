@@ -8,20 +8,20 @@
 ### **Group Name:** Team HHEJ
 
 **Team Members:**
-  - | Name | Student ID | Github |
-  - | :--- | :---: | ---: |
-  - | Harry McGoona | C24342003 | @harrymcgoona |
-  - | Eric Meagher | C24733845 | @ericmeagher |
-  - | Henry Guinane | C24464042 | @hguinan1 |
-  - | Jack Shun | [...] | @JackSh28 |
+| Name | Student ID | Github |
+| :--- | :---: | ---: |
+| Harry McGoona | C24342003 | @harrymcgoona |
+| Eric Meagher | C24733845 | @ericmeagher |
+| Henry Guinane | C24464042 | @hguinan1 |
+| Jack Shun | [...] | @JackSh28 |
 
 **Task Allocation:**
-  - | Name | Primary Focus | Deliverables |
-  - | :--- | :---: | ---: |
-  - | Harry McGoona | [...] | [...] |
-  - | Eric Meagher | [...] | [...] |
-  - | Henry Guinane | [...] | [...] |
-  - | Jack Shun | [...] | [...] |
+| Name | Primary Focus | Deliverables |
+| :--- | :---: | ---: |
+| Harry McGoona | [...] | [...] |
+| Eric Meagher | [...] | [...] |
+| Henry Guinane | [...] | [...] |
+| Jack Shun | [...] | [...] |
 
 ## 2. Problem Description
 Manual event scheduling and venue allocation is tedious and error prone. Organisers frequently struggle with double bookings, room capacity overflows, conflicting time slots, and unmet equipment requirements.
