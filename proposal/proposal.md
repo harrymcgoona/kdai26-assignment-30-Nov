@@ -6,6 +6,7 @@
 
 ## 1. Team Information
 ### **Group Name:** Team HHEJ
+
 **Team Members:**
   - | Name | Student ID | Github |
   - | :--- | :---: | ---: |
@@ -13,6 +14,7 @@
   - | Eric Meagher | C24733845 | @ericmeagher |
   - | Henry Guinane | C24464042 | @hguinan1 |
   - | Jack Shun | [...] | @JackSh28 |
+
 **Task Allocation:**
   - | Name | Primary Focus | Deliverables |
   - | :--- | :---: | ---: |
