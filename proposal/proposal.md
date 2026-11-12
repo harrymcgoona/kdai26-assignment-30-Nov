@@ -5,15 +5,15 @@
 **Lecturer:** Dr. Bianca Schoen-Phelan  
 
 ## 1. Team Information
-- **Group Name:** Team HHEJ
-- **Team Members:**
+### **Group Name:** Team HHEJ
+**Team Members:**
   - | Name | Student ID | Github |
   - | :--- | :---: | ---: |
   - | Harry McGoona | C24342003 | @harrymcgoona |
   - | Eric Meagher | C24733845 | @ericmeagher |
   - | Henry Guinane | C24464042 | @hguinan1 |
   - | Jack Shun | [...] | @JackSh28 |
-- **Task Allocation:**
+**Task Allocation:**
   - | Name | Primary Focus | Deliverables |
   - | :--- | :---: | ---: |
   - | Harry McGoona | [...] | [...] |
