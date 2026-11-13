@@ -16,12 +16,12 @@
 | Jack Shun | [...] | @JackSh28 |
 
 **Task Allocation:**
-| Name | Primary Focus | Deliverables |
+| Name | Job | Goal |
 | :--- | :---: | ---: |
-| Harry McGoona | [...] | [...] |
-| Eric Meagher | [...] | [...] |
-| Henry Guinane | [...] | [...] |
-| Jack Shun | [...] | [...] |
+| Eric Meagher | Knowledge Base & Constraints | Define data schemas, venues, events, and constraint rules |
+| Henry Guinane | Core Reasoning & Search | Build the CSP solver and search logic using those schemas |
+| Jack Shun | Data Pipelines & Testing | Populate actual realistic datasets (data/) and write tests against the schema (tests/) |
+| Harry McGoona | System Architecture & Integration | Wire everything together into main.py and document it in the README |
 
 ## 2. Problem Description
 Manual event scheduling and venue allocation is tedious and error prone. Organisers frequently struggle with double bookings, room capacity overflows, conflicting time slots, and unmet equipment requirements.
