@@ -24,13 +24,14 @@
 | Harry McGoona | System Architecture & Integration | Wire everything together into main.py and document it in the README |
 
 ## 2. Problem Description
-Manual event scheduling and venue allocation is tedious and error prone. Organisers frequently struggle with double bookings, room capacity overflows, conflicting time slots, and unmet equipment requirements.
+Manual event scheduling and venue allocation is tedious and error prone. Primary users such as university event coordinators and timetable administrators frequently struggle with double bookings, room capacity overflows, conflicting time slots, and unmet equipment requirements.
 
 Our system intends to solve this by automating the scheduling process. By representing events, rooms, and constraints explicitly in a knowledge base, the system uses search and constraint satisfaction techniques to generate conflict-free, optimised schedules instantly.
 
 ### Core Objectives
 - **Primary Goal:** Automatically assign events to valid venues and time slots with zero constraint violations.
 - **Challenges Addressed:** Managing hard operational limits (i.e., room capacity, equipment matching, time clashes) within a complex search space.
+- **Scope, Assumptions & Limitations:** The system assumes a static set of venue profiles and event requests for a single scheduling period, keeping scope strictly realistic for completion within the assignments timeframe.
 - **Value & Impact:** Eliminates manual scheduling errors, saves administrative time, and maximises efficient venue utilisation.
 
 ## 3. Proposed AI Approach & AIMA Framework
