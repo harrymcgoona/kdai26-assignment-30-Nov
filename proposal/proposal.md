@@ -13,14 +13,14 @@
 | Harry McGoona | C24342003 | @harrymcgoona |
 | Eric Meagher | C24733845 | @ericmeagher |
 | Henry Guinane | C24464042 | @hguinan1 |
-| Jack Shun | C24775089 | @JackSh28 |
+| Jack Shan | C24775089 | @JackSh28 |
 
 **Task Allocation:**
 | Name | Job | Goal |
 | :--- | :--- | :--- |
 | Eric Meagher | Knowledge Base & Constraints | Define data schemas, venues, events, and constraint rules |
 | Henry Guinane | Core Reasoning & Search | Build the CSP solver and search logic using those schemas |
-| Jack Shun | Data Pipelines & Testing | Populate actual realistic datasets (data/) and write tests against the schema (tests/) |
+| Jack Shan | Data Pipelines & Testing | Populate actual realistic datasets (data/) and write tests against the schema (tests/) |
 | Harry McGoona | System Architecture & Integration | Wire everything together into main.py and document it in the README |
 
 ## 2. Problem Description
