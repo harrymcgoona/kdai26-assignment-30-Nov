@@ -1,0 +1,7 @@
+[
+  {"id": "E1", "name": "AI Lecture", "event_type": "lecture", "attendees": 180, "organiser": "Dr Smith", "group": "TU850/3", "extra_features": []},
+  {"id": "E2", "name": "Python Lab", "event_type": "lab", "attendees": 35, "organiser": "Dr Smith", "group": "TU850/3", "extra_features": []},
+  {"id": "E3", "name": "Ethics Seminar", "event_type": "seminar", "attendees": 25, "organiser": "Dr Byrne", "group": "TU850/2", "extra_features": []},
+  {"id": "E4", "name": "Guest Talk", "event_type": "guest_talk", "attendees": 120, "organiser": "Dr Byrne", "group": "ALL", "extra_features": []},
+  {"id": "E5", "name": "Maths Exam", "event_type": "exam", "attendees": 140, "organiser": "Dr Kelly", "group": "TU850/2", "extra_features": []}
+]
