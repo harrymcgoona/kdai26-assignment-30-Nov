@@ -1,0 +1,6 @@
+[
+  {"id": "V1", "name": "Main Lecture Theatre", "capacity": 250, "features": ["projector", "microphone", "sound_system", "wheelchair_access"], "available_slots": ["Mon-09:00", "Mon-11:00", "Tue-09:00", "Tue-14:00"]},
+  {"id": "V2", "name": "Computer Lab 1", "capacity": 40, "features": ["computers", "power_sockets", "projector"], "available_slots": ["Mon-09:00", "Mon-14:00", "Tue-11:00"]},
+  {"id": "V3", "name": "Seminar Room A", "capacity": 30, "features": ["projector"], "available_slots": ["Mon-11:00", "Mon-14:00", "Tue-09:00"]},
+  {"id": "V4", "name": "Exam Hall", "capacity": 150, "features": ["exam_desks", "wheelchair_access"], "available_slots": ["Wed-09:00", "Wed-14:00"]}
+]
