@@ -1,35 +1,43 @@
-"""CSP formulation and constraint rules (AIMA style).
+# constraints for the scheduling csp
+# each event is a variable
+# a value is (venue id, time slot)
+# the schedule is a dict like {event id: (venue id, slot)}
 
-Variables : one per event
-Values    : (venue_id, slot) pairs
-State     : assignment dict {event_id: (venue_id, slot)}
-Goal      : every event assigned and no hard constraint broken
-Path cost : soft constraints (wasted seats)
-"""
 
+# ---- rules for one event on its own ----
 
 def fits_capacity(event, venue):
-    """The venue must hold everyone attending."""
+    # room has to be big enough
     return event.attendees <= venue.capacity
 
+
 def has_features(event, venue):
-    """The venue must have every feature the event needs."""
+    # room has to have everything the event needs
     return event.required_features.issubset(venue.features)
 
-def no_double_booked_venue(value1, value2):
-    """Two events can't be in the same venue at the same time."""
-    return value1 != value2
 
-def no_person_clash(event1, value1, event2, value2):
-    """The same lecturer or student group can't be in two places at once."""
-    same_slot = value1[1] == value2[1]          # [1] is the slot
+# ---- rules for two events together ----
+
+def no_double_booked_venue(allocation1, allocation2):
+    # cant have two events in the same room at the same time
+    return allocation1 != allocation2
+
+
+def no_person_clash(event1, allocation1, event2, allocation2):
+    # same lecturer or same class cant be in two places at once
+    same_slot = allocation1[1] == allocation2[1]          # [1] is the time slot
     shares_organiser = event1.organiser == event2.organiser
+    # ALL means everyone goes so it clashes with every class
     shares_group = (event1.group == event2.group
                     or "ALL" in (event1.group, event2.group))
     return not (same_slot and (shares_organiser or shares_group))
 
+
+# ---- domains ----
+
 def build_domains(events, venues):
-    """For each event, list every (venue, slot) that passes the unary constraints."""
+    # for each event get every room and time that works
+    # takes out rooms that are too small or missing stuff before the search starts
     domains = {}
     for event in events:
         options = []
@@ -41,30 +49,28 @@ def build_domains(events, venues):
     return domains
 
 
-def is_consistent(assignment, events):
-    """Check a full or partial assignment against the binary constraints."""
+# ---- stuff to pass into henrys CSP class ----
+
+def make_scheduling_constraint(events):
+    # makes the function henrys csp uses to check two events
     by_id = {e.id: e for e in events}
-    ids = list(assignment)
-    for i in range(len(ids)):
-        for j in range(i + 1, len(ids)):
-            e1, e2 = by_id[ids[i]], by_id[ids[j]]
-            v1, v2 = assignment[ids[i]], assignment[ids[j]]
-            if not no_double_booked_venue(v1, v2):
-                return False
-            if not no_person_clash(e1, v1, e2, v2):
-                return False
-    return True
+
+    def scheduling_constraint(event1, allocation1, event2, allocation2):
+        e1, e2 = by_id[event1], by_id[event2]
+        if not no_double_booked_venue(allocation1, allocation2):
+            return False
+        if not no_person_clash(e1, allocation1, e2, allocation2):
+            return False
+        return True
+
+    return scheduling_constraint
 
 
-def is_goal(assignment, events):
-    """Goal test: every event is scheduled and nothing clashes."""
-    return len(assignment) == len(events) and is_consistent(assignment, events)
-
-def wasted_seats(assignment, events, venues):
-    """Lower is better: total empty seats across the schedule."""
-    event_by_id = {e.id: e for e in events}
-    venue_by_id = {v.id: v for v in venues}
-    total = 0
-    for event_id, (venue_id, _slot) in assignment.items():
-        total += venue_by_id[venue_id].capacity - event_by_id[event_id].attendees
-    return total
+def build_csp_inputs(events, venues):
+    # gives the solver everything it needs in one go
+    variables = [e.id for e in events]
+    domains = build_domains(events, venues)
+    constraint = make_scheduling_constraint(events)
+    event_attendance = {e.id: e.attendees for e in events}
+    venue_capacity = {v.id: v.capacity for v in venues}
+    return variables, domains, constraint, event_attendance, venue_capacity
